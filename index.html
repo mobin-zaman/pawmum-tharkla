@@ -3,150 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Name</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Pawmum Tharkl School</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2e7d32;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #1b5e20;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #2e7d32;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            color: #1b5e20;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(27, 94, 32, 0.7)), url("/api/placeholder/1200/600");
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2e7d32;
+        }
+
+        /* About Section */
+        .about {
+            background: #f1f8e9;
+        }
+
+        /* Activities Grid */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 3px solid #2e7d32;
+        }
+
+        /* Communication Section */
+        .communication {
+            background: #2e7d32;
+            color: white;
+        }
+
+        .communication .section-title {
+            color: white;
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #2e7d32;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+        }
+
+        .cta .section-title {
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #2e7d32;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f1f8e9;
+            transform: translateY(-2px);
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 3px solid #2e7d32;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: #c8e6c9;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        /* Contributors Section */
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contributor-card {
+            padding: 1rem;
+        }
+
+        .contributor-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: #c8e6c9;
+            border: 3px solid #2e7d32;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: #c8e6c9;
+            border-radius: 8px;
+        }
+
+        /* Business Hours */
+        .hours {
+            background: #f1f8e9;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #1b5e20;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <a href="/" class="logo">School Name</a>
+        <div class="header-content">
+            <div class="logo">Pawmum Tharkl</div>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#activities">Activities</a></li>
-                    <li><a href="#communication">Communication</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to [School Name]</h1>
-                <p>Your tagline here. Brief description of the school.</p>
-                <a href="#about" class="btn">Learn More</a>
-            </div>
-            <div class="hero-image">
-                <img src="placeholder-image.jpg" alt="hero image" />
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Pawmum Tharkl</h1>
+            <p>Nurturing minds, building futures</p>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Detailed description of the school, values, and history.</p>
+        <div class="section-content">
+            <h2 class="section-title">About Us</h2>
+            <p>At Pawmum Tharkl, we believe in providing a nurturing environment where every student can thrive and reach their full potential. Our dedicated team of educators works tirelessly to create an engaging and supportive learning atmosphere.</p>
         </div>
     </section>
 
-    <section id="activities" class="activities">
-        <div class="container">
-            <h2>Extracurricular Activities</h2>
-            <ul>
-                <li>Activity 1 Description</li>
-                <li>Activity 2 Description</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="communication" class="communication">
-        <div class="container">
-            <h2>Parent-Teacher Communication</h2>
-            <p>Explain ways of communication (e.g., portal, meetings)</p>
-        </div>
-    </section>
-
-    <section id="programs" class="programs">
-        <div class="container">
-            <h2>Specialized Learning Programs</h2>
-            <p>Descriptions of special programs offered.</p>
-        </div>
-    </section>
-
-    <section id="support" class="support">
-        <div class="container">
-            <h2>Personalized Academic Support</h2>
-            <p>Details about the personalized help offered.</p>
-        </div>
-    </section>
-
-    <section id="cta" class="cta">
-        <div class="container">
-            <h2>Ready to Enroll?</h2>
-            <a href="/contact" class="btn">Contact Us</a>
-        </div>
-    </section>
-
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Latest Articles</h2>
-            <article>
-                <h3><a href="#">Article Title 1</a></h3>
-                <p>Brief Description</p>
-            </article>
-            <article>
-                <h3><a href="#">Article Title 2</a></h3>
-                <p>Brief Description</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="contributors" class="contributors">
-        <div class="container">
-            <h2>Our Team</h2>
-            <div class="contributor">
-                <img src="profile.png" alt="contributor 1" />
-                <h3>Name 1</h3>
-                <p>Title</p>
-            </div>
-            <div class="contributor">
-                <img src="profile.png" alt="contributor 2" />
-                <h3>Name 2</h3>
-                <p>Title</p>
+    <!-- Activities Section -->
+    <section id="activities">
+        <div class="section-content">
+            <h2 class="section-title">Extracurricular Activities</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h3>Sports</h3>
+                    <p>Comprehensive sports programs promoting physical fitness and teamwork.</p>
+                </div>
+                <div class="activity-card">
+                    <h3>Arts</h3>
+                    <p>Creative expression through visual arts, music, and performing arts.</p>
+                </div>
+                <div class="activity-card">
+                    <h3>Clubs</h3>
+                    <p>Various academic and interest-based clubs for personal growth.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-item">
-                <img src="gallery1.jpg" alt="gallery image" />
-            </div>
-            <div class="gallery-item">
-                <img src="gallery2.jpg" alt="gallery image" />
+    <!-- Communication Section -->
+    <section class="communication">
+        <div class="section-content">
+            <h2 class="section-title">Parent-Teacher Communication</h2>
+            <p>We believe in strong partnerships between parents and teachers to ensure student success. Regular updates, meetings, and open communication channels help us work together effectively.</p>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs">
+        <div class="section-content">
+            <h2 class="section-title">Specialized Learning Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h3>Advanced Placement</h3>
+                    <p>Challenging courses for college-bound students.</p>
+                </div>
+                <div class="program-card">
+                    <h3>Learning Support</h3>
+                    <p>Individualized assistance for students needing extra help.</p>
+                </div>
+                <div class="program-card">
+                    <h3>STEM Focus</h3>
+                    <p>Enhanced science and technology curriculum.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="hours" class="hours">
-        <div class="container">
-            <h2>Business Hours</h2>
-            <p>Monday - Friday: 9 AM - 5 PM</p>
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="section-content">
+            <h2>Join Our School Community</h2>
+            <p>Take the first step towards excellent education</p>
+            <a href="#contact" class="cta-button">Enroll Now</a>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© [Year] [School Name]. All rights reserved.</p>
-            <div class="footer-contact">
-                <p>Email: info@school.com</p>
-                <p>Phone: 555-123-4567</p>
+    <!-- Blog Section -->
+    <section>
+        <div class="section-content">
+            <h2 class="section-title">Latest News</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <h3>School Events</h3>
+                        <p>Updates on recent and upcoming school activities.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <h3>Student Achievements</h3>
+                        <p>Celebrating our students' remarkable accomplishments.</p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <!-- Contributors Section -->
+    <section>
+        <div class="section-content">
+            <h2 class="section-title">Our Team</h2>
+            <div class="contributors-grid">
+                <div class="contributor-card">
+                    <div class="contributor-image"></div>
+                    <h3>John Doe</h3>
+                    <p>Principal</p>
+                </div>
+                <div class="contributor-card">
+                    <div class="contributor-image"></div>
+                    <h3>Jane Smith</h3>
+                    <p>Academic Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section>
+        <div class="section-content">
+            <h2 class="section-title">School Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="hours">
+        <div class="section-content">
+            <h2 class="section-title">Business Hours</h2>
+            <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+            <p>Saturday: 9:00 AM - 12:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <h3>Contact Us</h3>
+                <p>123 School Street</p>
+                <p>City, State 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@pawmum.org</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
