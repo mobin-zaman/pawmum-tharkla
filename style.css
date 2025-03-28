@@ -310,3 +310,8 @@ footer li {
         padding: 2rem 1rem;
     }
 }
+
+/* Offset scroll target for fixed header */
+section[id] {
+    scroll-margin-top: 100px; /* Adjust this value based on actual header height */
+}
