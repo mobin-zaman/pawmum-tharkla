@@ -24,7 +24,7 @@ header {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 1rem; /* Increased top/bottom padding */
+    padding: 1rem; /* Reduced padding to match smaller logo */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@ header {
 
 /* Styles for the logo image */
 .logo {
-    height: 100px; /* Increased height again */
+    height: 60px; /* Reduced height for modern look */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Prevents extra space below image */
 }
