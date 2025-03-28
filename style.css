@@ -24,7 +24,7 @@ header {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 1rem 1rem 0.5rem; /* Reduced left padding */
+    padding: 1rem 1rem 1rem 0; /* Removed left padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,8 +89,8 @@ nav a:hover {
 
 .hero-content {
     max-width: 600px; /* Adjusted max-width for left alignment */
-    padding: 2rem; /* Reset padding */
-    padding-left: 4rem; /* Keep left padding for positioning */
+    padding: 2rem; /* Base padding */
+    padding-left: 2rem; /* Reduced left padding */
     text-align: left; /* Align text to the left */
     /* Removed background blur properties */
 }
