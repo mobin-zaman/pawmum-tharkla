@@ -297,9 +297,26 @@ footer li {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
+    /* Hide desktop navigation and right-side icons/button */
+    header nav,
+    header .header-content > div:last-of-type { /* Selects the div containing social/donate */
         display: none;
-        /* Consider a hamburger menu later */
+    }
+
+    /* Show hamburger button */
+    .menu-toggle {
+        display: block; /* Show on mobile */
+    }
+
+    /* Adjust header content alignment on mobile */
+    .header-content {
+        justify-content: space-between; /* Ensure logo and hamburger are spaced out */
+        padding: 0.5rem 1rem; /* Adjust padding if needed */
+    }
+
+    /* Reduce logo size slightly more on mobile if needed */
+    .logo {
+        height: 50px;
     }
 
     .hero h1 {
@@ -309,9 +326,108 @@ footer li {
     section {
         padding: 2rem 1rem;
     }
+
+    /* Adjust hero padding on smaller screens */
+    .hero-content {
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+    .hero h1 {
+        font-size: 2rem; /* Already defined, just confirming */
+    }
+    .hero p {
+        font-size: 1.1rem; /* Smaller subtext for mobile */
+    }
 }
 
 /* Offset scroll target for fixed header */
 section[id] {
     scroll-margin-top: 100px; /* Adjust this value based on actual header height */
+}
+
+/* Hamburger Menu Button - Hidden by default */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Adjust size */
+    color: #2e7d32; /* Match nav link color */
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Menu Container - Hidden by default */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(27, 94, 32, 0.98); /* Dark green overlay */
+    z-index: 1100; /* Above header */
+    padding: 6rem 2rem 2rem; /* Padding top to avoid header overlap */
+    text-align: center;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.mobile-menu.show {
+    display: block; /* Show the menu when class is added */
+}
+
+/* Close button inside mobile menu */
+.close-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Menu List */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0; /* Space below links */
+}
+
+.mobile-menu li {
+    margin-bottom: 1.5rem;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+ .mobile-menu a:hover {
+    color: #ffeb3b; /* Highlight color */
+ }
+
+/* Social Icons inside Mobile Menu */
+.mobile-social-icons {
+    margin-bottom: 2rem; /* Space below icons */
+}
+.mobile-social-icons a {
+    font-size: 1.8rem; /* Larger icons */
+    margin: 0 0.8rem;
+}
+
+/* Donate button inside mobile menu */
+.donate-button-mobile {
+    display: inline-block;
+    background-color: #ffeb3b;
+    color: #1b5e20;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.donate-button-mobile:hover {
+     background-color: #fbc02d;
 }

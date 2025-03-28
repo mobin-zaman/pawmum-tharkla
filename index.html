@@ -76,6 +76,31 @@
                 <!-- Donate Button -->
                 <a href="#donate" class="donate-button-header">Donate Now</a>
             </div>
+            <!-- Add Hamburger Button -->
+            <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div> <!-- End of header-content -->
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <button id="close-menu" class="close-menu">×</button>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contributors">Contributors</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Social Icons in Mobile Menu -->
+            <div class="mobile-social-icons">
+                <a href="https://www.facebook.com/pawmumschool/?_rdc=2&_rdr" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/pawmum_school/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@pawmumtharkla3323" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:pawmum.school@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
+            </div>
+             <!-- Donate Button in Mobile Menu -->
+            <a href="#donate" class="donate-button-mobile">Donate Now</a>
         </div>
     </header>
 
@@ -253,6 +278,34 @@
             </p>
         </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a'); // Get all links in mobile menu
+
+        if (menuToggle && mobileMenu && closeMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.add('show');
+            });
+
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+
+            // Optional: Close menu when a link is clicked (useful for single-page apps)
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only close if it's an internal link (starts with #)
+                    if (link.getAttribute('href').startsWith('#')) {
+                         mobileMenu.classList.remove('show');
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>
