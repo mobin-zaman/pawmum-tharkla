@@ -297,21 +297,38 @@ footer li {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Hide desktop navigation and right-side icons/button */
-    header nav,
-    header .header-content > div:last-of-type { /* Selects the div containing social/donate */
+    /* Hide only the desktop navigation list */
+    header nav {
         display: none;
     }
 
+    /* Hide only the desktop Donate button */
+    .donate-button-header {
+        display: none;
+    }
+
+    /* Ensure the container for social icons and Donate button is still visible */
+    /* (This rule might not be strictly necessary if the div only contains those two,
+       but it clarifies intent) */
+    /* header .header-content > div:last-of-type {
+         display: flex; /* Or inline-flex if that's how it was */
+       /*  align-items: center;
+    } */
+
     /* Show hamburger button */
     .menu-toggle {
-        display: block; /* Show on mobile */
+        display: block !important; /* Force display */
+        z-index: 1050; /* Ensure it's clickable, above other header content */
+        order: 3; /* Make sure it comes after social icons */
+        margin-left: 0.5rem; /* Add some space */
+        /* Make sure color is visible if needed */
+        /* color: #2e7d32; */ /* Already set in base style, but uncomment if needed */
     }
 
     /* Adjust header content alignment on mobile */
     .header-content {
-        justify-content: space-between; /* Ensure logo and hamburger are spaced out */
-        padding: 0.5rem 1rem; /* Adjust padding if needed */
+        justify-content: space-between; /* Space out logo, social/hamburger */
+        padding: 0.5rem 1rem; /* Adjust padding */
     }
 
     /* Reduce logo size slightly more on mobile if needed */
@@ -337,6 +354,21 @@ footer li {
     }
     .hero p {
         font-size: 1.1rem; /* Smaller subtext for mobile */
+    }
+
+     /* Reduce spacing between social icons if needed on mobile */
+    .social-icons {
+         gap: 0.8rem;
+    }
+    .social-icons a {
+        font-size: 1.1rem; /* Slightly smaller icons on mobile */
+    }
+
+    /* Ensure the div containing social icons is correctly positioned */
+    header .header-content > div:nth-of-type(1) { /* Target the div holding social icons */
+         display: inline-flex; /* Keep it inline */
+         align-items: center;
+         order: 2; /* Place it between logo and hamburger */
     }
 }
 
