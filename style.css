@@ -24,7 +24,7 @@ header {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem; /* Reduced padding to match smaller logo */
+    padding: 1rem 1rem 1rem 0.5rem; /* Reduced left padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,14 +78,13 @@ nav a:hover {
     /* <-- You can replace this URL with your image link if needed */
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 100vh; /* Changed to fill viewport height */
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Align content box to the left */
     color: white;
     /* text-align: center; Removed, handled by hero-content */
-    margin-top: 60px;
-    /* Adjust based on header height */
+    /* margin-top: 60px; <-- REMOVED this line */
 }
 
 .hero-content {
