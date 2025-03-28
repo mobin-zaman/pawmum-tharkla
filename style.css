@@ -32,7 +32,7 @@ header {
 
 /* Styles for the logo image */
 .logo {
-    height: 60px; /* Increased height */
+    height: 80px; /* Increased height to make logo bigger */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Prevents extra space below image */
 }
