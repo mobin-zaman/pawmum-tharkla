@@ -45,7 +45,47 @@
         .hero-buttons .cta-button {
             margin: 0.5rem;
         }
-    </style>
+        
+        /* New styles for About section layout */
+        .about-content-wrapper {
+        display: flex;
+        gap: 2rem; /* Space between text and images */
+        align-items: flex-start; /* Align items at the top */
+        }
+        .about-text {
+        flex: 1; /* Allow text to take available space */
+        }
+        .about-images {
+        flex: 0 0 40%; /* Define a width for the image container */
+        /* Removed grid layout */
+        /* display: grid; */
+        /* grid-template-columns: repeat(2, 1fr); */
+        gap: 1rem; /* Keep gap for consistency */
+        }
+        .placeholder-image-medium {
+        background-color: #e0e0e0;
+        border: 1px dashed #bdbdbd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #757575;
+        min-height: 150px; /* Medium height */
+        width: 100%;
+        margin-bottom: 1rem; /* Add margin for vertical spacing */
+        }
+        
+        /* Responsive adjustment */
+        @media (max-width: 768px) {
+        .about-content-wrapper {
+        flex-direction: column; /* Stack on smaller screens */
+        }
+        .about-images {
+        flex-basis: auto;
+        width: 100%;
+        margin-top: 2rem;
+        }
+        }
+        </style>
 </head>
 
 <body>
@@ -119,12 +159,22 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="section-content">
-            <h2 class="section-title">Our Mission & Story</h2>
-            <div class="placeholder-image">[Placeholder Image: School/Students]</div>
-            <p>[Placeholder Text: Describe the school's mission, vision, history, the community it serves (remote hill
-                area), and its impact. Emphasize the challenges and the importance of support/donations.]</p>
-            <p>[Placeholder Text: Add more details about the school's founding, goals, and unique approach if
-                available.]</p>
+        <h2 class="section-title">Our Mission & Story</h2>
+        <div class="about-content-wrapper">
+        <div class="about-text">
+        <p>Nestled deep in the remote hills, where access to education is a rare privilege, Pawmum Tharkla stands as a beacon of hope for the Mro community. What began with just 20 students in two class groups has grown into a school, now home to 110 students from six different Mro tribal villages, guided by five dedicated teachers. Over the past seven years, 25 students have successfully graduated from PSC—a rare and remarkable achievement in this community. Our mission is clear: to educate and empower the new generation of the Mro community, ensuring they receive the knowledge, skills, and cultural identity they deserve.</p>
+        <p>Beyond education, Pawmum nurtures young minds by promoting cultural heritage, mental well-being, and self-sufficiency. Our school fosters not only academic learning but also social and cultural development, creating opportunities for both young and adult members of the community. With a deep commitment to sustainability, we have pioneered an eco-friendly school compound, constructing classrooms, hostels, kitchens, and sanitation facilities using wood and bamboo. This zero-concrete approach respects the environment while maintaining resilience.</p>
+        <p>Looking ahead, our vision is to expand Pawmum into a fully developed high school, securing government registration to provide formal education and open new doors for our students. This step will not only validate their education but also ensure that they, as rightful citizens of this country, receive the opportunities, recognition, and future they deserve. This is more than just a school—it is a movement towards social, economic, and environmental progress. However, challenges remain, and we need support to sustain this mission.</p>
+        <p>But sustaining this dream requires more than just passion—it requires collective responsibility. The school urgently requires financial support to complete its construction, provide essential learning materials, and ensure that teachers and staff can continue their work uninterrupted. Without these resources, children will lose access to education, and an entire generation may be left behind. Your contribution can change that. By supporting this initiative, you are not just funding a school; you are investing in a future where every child, no matter where they are born, has the opportunity to learn, grow, and build a life of dignity and possibility. Now is the time to stand with them. Your support today can create lasting change.</p>
+        <p>Your contribution can make a tangible difference. Whether through funding, resources, or advocacy, every effort helps us bridge the gap between dreams and reality.</p>
+        </div>
+        <div class="about-images">
+        <div class="placeholder-image-medium">[Placeholder Image 1]</div>
+        <div class="placeholder-image-medium">[Placeholder Image 2]</div>
+        <div class="placeholder-image-medium">[Placeholder Image 3]</div>
+        <div class="placeholder-image-medium">[Placeholder Image 4]</div>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -133,10 +183,9 @@
         <div class="section-content">
             <h2 class="section-title">Unique Hillside Architecture</h2>
             <div class="placeholder-image">[Placeholder Image: School Building 1]</div>
-            <p>[Placeholder Text: Describe what makes the school's architecture interesting or unique. Mention
-                materials, design philosophy, integration with the landscape, cultural significance, etc.]</p>
+            <p>The school's architecture is a beautiful blend of sustainability and cultural heritage. Built using eco-friendly materials like bamboo, wood, and thatch, it honors traditional building methods while minimizing environmental impact. What makes the structure truly unique is its deep cultural resonance. Inspired by the Mro community’s ancestral architecture, the design features stilted bamboo structures, woven walls, and thatched roofs, reinforcing a strong sense of identity and belonging. Every element of the architecture is a reflection of indigenous knowledge, passed down through generations.</p>
             <div class="placeholder-image">[Placeholder Image: School Building 2 - Optional]</div>
-            <p>[Placeholder Text: Add more details or specific features of the architecture.]</p>
+            <p>Built using over 120,000 bamboo poles, 20 teak trees, and nearly 1,000 bunches of sungrass, the entire school is crafted from locally sourced, eco-friendly materials. This zero-concrete, low-impact approach honors traditional craftsmanship while preserving the environment. The school’s integration with the hillside is a testament to its respect for nature. Classrooms are designed to flow with the natural contours of the land, creating a learning environment that feels like a part of the forest. This design not only preserves the beauty of the landscape but also provides natural ventilation and elevated floors, keeping the space cool and dry during the monsoon season. Every aspect of the school’s architecture is a living tribute to the Mro community’s past, present, and future, making it a truly unique and meaningful place for learning.</p>
         </div>
     </section>
 
@@ -144,9 +193,11 @@
     <section id="activities" style="background: #f1f8e9;"> <!-- Alternate background -->
         <div class="section-content">
             <h2 class="section-title">Learning Beyond Walls</h2>
-            <p class="text-center" style="margin-bottom: 2rem;">[Placeholder: Brief intro about the importance of
-                co-curricular activities for holistic development.]</p>
-            <div class="activities-grid">
+            <p>Co-curricular activities are more than just fun— they’re a key part of shaping well-rounded individuals. While academics lay the foundation of knowledge, co-curricular activities play a pivotal role in the holistic development of both our students and community. It’s through activities like sports, music, drama, and arts that students truly discover their potential.</p>
+            <p>The Mro community, which values tradition and culture, co-curricular activities provide an avenue for preserving and promoting their rich heritage. These activities also foster leadership, teamwork, and creativity—traits that are invaluable as the community continues to evolve and grow in a rapidly changing world.</p>
+            <p>Students gain the confidence to express themselves, explore new passions, and develop skills that will help them navigate life beyond the classroom. Whether it’s winning a game, performing on stage, or creating a masterpiece, co-curriculars inspire students to embrace challenges and push their limits.</p>
+            <p>At our school, we believe in creating a space where every child can shine in their own unique way, ensuring they grow not just academically, but emotionally, socially, and creatively as well. As they learn to collaborate, solve problems, and lead with confidence, they are not only preparing themselves for personal success but also for making meaningful contributions to the community.</p>
+            <div class="activities-grid" style="margin-top: 2rem;">
                 <div class="activity-card">
                     <div class="placeholder-image" style="min-height: 150px;">[Icon/Image]</div>
                     <h3>Activity 1</h3>
