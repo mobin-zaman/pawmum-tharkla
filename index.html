@@ -3,296 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawmum Tharkla School</title>
+    <title>Pawmum Tharkla School - Support Us</title> <!-- Updated Title -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add specific styles for the Donate button if needed, or modify in style.css -->
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Header Styles */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2e7d32;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
+        .donate-button-header {
+            background-color: #ffeb3b; /* Example prominent color */
+            color: #1b5e20;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
             text-decoration: none;
-            color: #2e7d32;
-            font-weight: 500;
+            font-weight: bold;
+            margin-left: 1rem; /* Adjust spacing */
+            transition: background-color 0.3s ease;
         }
-
-        nav a:hover {
-            color: #1b5e20;
+        .donate-button-header:hover {
+            background-color: #fbc02d; /* Darker shade on hover */
         }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icons a {
-            color: #2e7d32;
-            font-size: 1.2rem;
-        }
-
-        .social-icons a:hover {
-            color: #1b5e20;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(27, 94, 32, 0.7)), url("/api/placeholder/1200/600");
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
+        /* Simple placeholder image style */
+        .placeholder-image {
+            background-color: #e0e0e0;
+            border: 1px dashed #bdbdbd;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
+            color: #757575;
+            min-height: 200px; /* Example height */
+            width: 100%;
             margin-bottom: 1rem;
         }
-
-        /* Section Styles */
-        section {
-            padding: 4rem 2rem;
-        }
-
-        .section-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2e7d32;
-        }
-
-        /* About Section */
-        .about {
-            background: #f1f8e9;
-        }
-
-        /* Activities Grid */
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .activity-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-top: 3px solid #2e7d32;
-        }
-
-        /* Communication Section */
-        .communication {
-            background: #2e7d32;
-            color: white;
-        }
-
-        .communication .section-title {
-            color: white;
-        }
-
-        /* Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .program-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-bottom: 3px solid #2e7d32;
-        }
-
-        /* Call to Action */
-        .cta {
-            background: #2e7d32;
-            color: white;
-            text-align: center;
-        }
-
-        .cta .section-title {
-            color: white;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: white;
-            color: #2e7d32;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #f1f8e9;
-            transform: translateY(-2px);
-        }
-
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-left: 3px solid #2e7d32;
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: #c8e6c9;
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        /* Contributors Section */
-        .contributors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .contributor-card {
-            padding: 1rem;
-        }
-
-        .contributor-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            background: #c8e6c9;
-            border: 3px solid #2e7d32;
-        }
-
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .gallery-item {
-            height: 250px;
-            background: #c8e6c9;
-            border-radius: 8px;
-        }
-
-        /* Business Hours */
-        .hours {
-            background: #f1f8e9;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            background: #1b5e20;
-            color: white;
-            padding: 3rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer ul {
-            list-style: none;
-        }
-
-        footer li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 2rem 1rem;
-            }
+        /* Adjust hero button styles */
+        .hero-buttons .cta-button {
+             margin: 0.5rem;
         }
     </style>
 </head>
@@ -303,186 +46,160 @@
             <div class="logo">Pawmum Tharkla</div>
             <nav>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
                     <li><a href="#activities">Activities</a></li>
-                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#donate">Donate</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div>
+                <!-- Social Icons (Optional - Keep or Remove) -->
+                <div class="social-icons" style="display: inline-flex;">
+                    <a href="#" title="Facebook Placeholder"><i class="fab fa-facebook"></i></a>
+                    <!-- Add other relevant social links if available -->
+                </div>
+                <!-- Donate Button -->
+                <a href="#donate" class="donate-button-header">Donate Now</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to Pawmum Tharkla</h1>
-            <p>Nurturing minds, building futures</p>
+            <h1>Pawmum Tharkla: Educating the Future in the Hills</h1>
+            <p>[Placeholder: Brief, impactful mission statement or tagline about supporting the school and community.]</p>
+            <div class="hero-buttons">
+                 <a href="#about" class="cta-button">Learn More</a>
+                 <a href="#donate" class="cta-button donate-button-header">Donate Now</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="section-content">
-            <h2 class="section-title">About Us</h2>
-            <p>Welcome to Pawmum Tharkla, a leading school located in Lama Bandarban. We are dedicated to providing quality education and fostering a nurturing environment for our students. With a team of experienced educators and a comprehensive curriculum, we strive to empower our students with knowledge and skills that will help them succeed in their academic and personal lives. At Pawmum Tharkla, we believe in holistic development, focusing not only on academic excellence but also on character building and instilling values.</p>
+            <h2 class="section-title">Our Mission & Story</h2>
+            <div class="placeholder-image">[Placeholder Image: School/Students]</div>
+            <p>[Placeholder Text: Describe the school's mission, vision, history, the community it serves (remote hill area), and its impact. Emphasize the challenges and the importance of support/donations.]</p>
+            <p>[Placeholder Text: Add more details about the school's founding, goals, and unique approach if available.]</p>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture">
+        <div class="section-content">
+            <h2 class="section-title">Unique Hillside Architecture</h2>
+            <div class="placeholder-image">[Placeholder Image: School Building 1]</div>
+            <p>[Placeholder Text: Describe what makes the school's architecture interesting or unique. Mention materials, design philosophy, integration with the landscape, cultural significance, etc.]</p>
+            <div class="placeholder-image">[Placeholder Image: School Building 2 - Optional]</div>
+            <p>[Placeholder Text: Add more details or specific features of the architecture.]</p>
         </div>
     </section>
 
     <!-- Activities Section -->
-    <section id="activities">
+    <section id="activities" style="background: #f1f8e9;"> <!-- Alternate background -->
         <div class="section-content">
-            <h2 class="section-title">Extracurricular Activities</h2>
+            <h2 class="section-title">Learning Beyond Walls</h2>
+            <p class="text-center" style="margin-bottom: 2rem;">[Placeholder: Brief intro about the importance of co-curricular activities for holistic development.]</p>
             <div class="activities-grid">
                 <div class="activity-card">
-                    <h3>Sports</h3>
-                    <p>Comprehensive sports programs promoting physical fitness and teamwork.</p>
+                    <div class="placeholder-image" style="min-height: 150px;">[Icon/Image]</div>
+                    <h3>Activity 1</h3>
+                    <p>[Placeholder: Description of a key co-curricular activity, e.g., Sports, Arts, Music, Cultural Programs, Community Service.]</p>
                 </div>
                 <div class="activity-card">
-                    <h3>Arts</h3>
-                    <p>Creative expression through visual arts, music, and performing arts.</p>
+                    <div class="placeholder-image" style="min-height: 150px;">[Icon/Image]</div>
+                    <h3>Activity 2</h3>
+                    <p>[Placeholder: Description of another activity.]</p>
                 </div>
                 <div class="activity-card">
-                    <h3>Clubs</h3>
-                    <p>Various academic and interest-based clubs for personal growth.</p>
+                    <div class="placeholder-image" style="min-height: 150px;">[Icon/Image]</div>
+                    <h3>Activity 3</h3>
+                    <p>[Placeholder: Description of a third activity.]</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Communication Section -->
-    <section class="communication">
+    <!-- Gallery Section -->
+    <section id="gallery">
         <div class="section-content">
-            <h2 class="section-title">Parent-Teacher Communication</h2>
-            <p>We believe in strong partnerships between parents and teachers to ensure student success. Regular updates, meetings, and open communication channels help us work together effectively.</p>
-        </div>
-    </section>
-
-    <!-- Programs Section -->
-    <section id="programs">
-        <div class="section-content">
-            <h2 class="section-title">Specialized Learning Programs</h2>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <h3>Advanced Placement</h3>
-                    <p>Challenging courses for college-bound students.</p>
-                </div>
-                <div class="program-card">
-                    <h3>Learning Support</h3>
-                    <p>Individualized assistance for students needing extra help.</p>
-                </div>
-                <div class="program-card">
-                    <h3>STEM Focus</h3>
-                    <p>Enhanced science and technology curriculum.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="section-content">
-            <h2>Join Our School Community</h2>
-            <p>Take the first step towards excellent education</p>
-            <a href="#contact" class="cta-button">Enroll Now</a>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section>
-        <div class="section-content">
-            <h2 class="section-title">Latest News</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image"></div>
-                    <div class="blog-content">
-                        <h3>School Events</h3>
-                        <p>Updates on recent and upcoming school activities.</p>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image"></div>
-                    <div class="blog-content">
-                        <h3>Student Achievements</h3>
-                        <p>Celebrating our students' remarkable accomplishments.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contributors Section -->
-    <section>
-        <div class="section-content">
-            <h2 class="section-title">Our Team</h2>
-            <div class="contributors-grid">
-                <div class="contributor-card">
-                    <div class="contributor-image"></div>
-                    <h3>John Doe</h3>
-                    <p>Principal</p>
-                </div>
-                <div class="contributor-card">
-                    <div class="contributor-image"></div>
-                    <h3>Jane Smith</h3>
-                    <p>Academic Director</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <section>
-        <div class="section-content">
-            <h2 class="section-title">School Gallery</h2>
+            <h2 class="section-title">Moments at Pawmum Tharkla</h2>
+            <p class="text-center" style="margin-bottom: 2rem;">[Placeholder: A glimpse into life at our school.]</p>
             <div class="gallery-grid">
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
+                <div class="gallery-item placeholder-image">[Placeholder: Campus Image]</div>
+                <div class="gallery-item placeholder-image">[Placeholder: Student Activity Image]</div>
+                <div class="gallery-item placeholder-image">[Placeholder: Event Image]</div>
+                <div class="gallery-item placeholder-image">[Placeholder: Community Image]</div>
+                <div class="gallery-item placeholder-image">[Placeholder: Another Campus Image]</div>
+                <div class="gallery-item placeholder-image">[Placeholder: More Student Life]</div>
             </div>
+             <p class="text-center" style="margin-top: 2rem;">[Placeholder: Link to view more photos if applicable, or a note about sharing more soon.]</p>
         </div>
     </section>
 
-    <!-- Business Hours -->
-    <section class="hours">
+    <!-- Donate Section -->
+    <section id="donate" class="cta"> <!-- Reusing CTA style for background -->
         <div class="section-content">
-            <h2 class="section-title">Business Hours</h2>
-            <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
-            <p>Saturday: 9:00 AM - 12:00 PM</p>
-            <p>Sunday: Closed</p>
+            <h2 class="section-title">Support Our School</h2>
+            <p>[Placeholder Text: Explain clearly why donations are crucial for the school's operation and impact. Mention specific needs like teacher salaries, learning materials, infrastructure, student support, etc.]</p>
+            <p>[Placeholder Text: Describe how donations make a difference in the lives of students and the community.]</p>
+            <h3 style="margin-top: 2rem;">How to Donate:</h3>
+            <p>[Placeholder Info: Provide clear instructions. E.g., "Bank Transfer details coming soon. For inquiries, please contact [Name/Email/Phone]". If an online platform link exists, add it here.]</p>
+            <!-- Example Placeholder for Bank Details -->
+            <!--
+            <p><strong>Bank Name:</strong> [Placeholder Bank Name]</p>
+            <p><strong>Account Name:</strong> Pawmum Tharkla School [Placeholder]</p>
+            <p><strong>Account Number:</strong> [Placeholder Account Number]</p>
+            <p><strong>Branch:</strong> [Placeholder Branch]</p>
+            <p><strong>SWIFT Code:</strong> [Placeholder SWIFT Code, if applicable]</p>
+            -->
+            <a href="#contact" class="cta-button" style="margin-top: 2rem;">Contact Us for Donation Details</a>
+            <!-- Or if direct link exists: <a href="[DONATION_LINK]" class="cta-button" style="margin-top: 2rem;">Donate Online Now</a> -->
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
+    <!-- Contact Section -->
+    <footer id="contact"> <!-- Combined Contact into Footer for simplicity -->
         <div class="footer-content">
             <div>
                 <h3>Contact Us</h3>
-                <p>123 School Street</p>
-                <p>City, State 12345</p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Email: info@pawmum.org</p>
+                <p>[Placeholder Address Line 1, e.g., Pawmum Tharkla School]</p>
+                <p>[Placeholder Address Line 2, e.g., Lama, Bandarban]</p>
+                <p>[Placeholder Country, e.g., Bangladesh]</p>
+                <p>Phone: [Placeholder Phone Number]</p>
+                <p>Email: [Placeholder Email Address, e.g., info@pawmumtharkla.org]</p>
             </div>
             <div>
                 <h3>Quick Links</h3>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
                     <li><a href="#activities">Activities</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#donate">Donate</a></li>
                 </ul>
             </div>
             <div>
                 <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                 <div class="social-icons">
+                    <a href="#" title="Facebook Placeholder"><i class="fab fa-facebook"></i></a>
+                    <!-- Add other relevant social links if available -->
+                    <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                    <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
                 </div>
+                <h3 style="margin-top: 1.5rem;">Support Us</h3>
+                <p>Your contribution makes a difference.</p>
+                <a href="#donate" class="donate-button-header" style="display: inline-block; margin-top: 0.5rem;">Donate Now</a>
             </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #4a7c4e;">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Pawmum Tharkla School. All Rights Reserved. [Placeholder: Add credits if needed]</p>
         </div>
     </footer>
 </body>
