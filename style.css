@@ -24,7 +24,7 @@ header {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem 1rem; /* Increased top/bottom padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,6 +35,11 @@ header {
     height: 100px; /* Increased height again */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Prevents extra space below image */
+}
+
+/* Add spacing around the navigation */
+header nav {
+    margin: 0 2rem; /* Add horizontal margin */
 }
 
 nav ul {
