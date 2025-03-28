@@ -103,8 +103,8 @@ nav a:hover {
 
 /* Add text shadow to hero paragraph as well */
 .hero p {
-     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Re-applied stronger text shadow */
-     font-size: 1.1rem; /* Optional: Adjust paragraph size */
+     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); /* Increased shadow offset, blur, and opacity */
+     font-size: 1.3rem; /* Increased font size */
      line-height: 1.7;
 }
 
