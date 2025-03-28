@@ -30,10 +30,11 @@ header {
     align-items: center;
 }
 
+/* Styles for the logo image */
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2e7d32;
+    height: 60px; /* Increased height */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents extra space below image */
 }
 
 nav ul {
@@ -84,20 +85,23 @@ nav a:hover {
 
 .hero-content {
     max-width: 600px; /* Adjusted max-width for left alignment */
-    padding: 2rem;
-    padding-left: 4rem; /* Added padding on the left */
+    padding: 2rem; /* Reset padding */
+    padding-left: 4rem; /* Keep left padding for positioning */
     text-align: left; /* Align text to the left */
+    /* Removed background blur properties */
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Further reduced font size */
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for readability */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Re-applied stronger text shadow */
 }
 
 /* Add text shadow to hero paragraph as well */
 .hero p {
-     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Added text shadow for readability */
+     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Re-applied stronger text shadow */
+     font-size: 1.1rem; /* Optional: Adjust paragraph size */
+     line-height: 1.7;
 }
 
 /* Section Styles */
