@@ -235,14 +235,16 @@ section {
     padding: 1rem;
 }
 
-.contributor-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    background: #c8e6c9;
-    /* Placeholder color */
-    border: 3px solid #2e7d32;
+/* Style for contributor logos */
+.contributor-logo {
+    display: block; /* Center the image via margin */
+    margin: 0 auto 1rem; /* Center horizontally, add bottom margin */
+    max-width: 150px; /* Limit logo width */
+    max-height: 120px; /* Limit logo height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #eee; /* Optional: Add a light border like in the image */
+    padding: 5px; /* Optional: Add padding inside the border */
 }
 
 /* Gallery */
